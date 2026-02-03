@@ -412,61 +412,10 @@ footer p {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .logo-header img {
-        height: 50px;
-    }
-
-    nav ul {
-        gap: 1.5rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    nav a {
-        font-size: 0.95rem; /* Slightly larger for readability */
-        padding: 5px; /* Better touch target */
-    }
-
-    .hero {
-        height: 60vh; /* Fallback */
-        height: 60dvh; /* Modern viewport unit */
-        min-height: 400px;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .collection-grid {
-        grid-template-columns: 1fr;
-    }
-}
-/* =====================================
-   RESPONSIVE ADD-ON (NO CORE CHANGES)
-   ===================================== */
-
-/* Prevent horizontal overflow */
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-/* ---------- Tablets ---------- */
 @media (max-width: 1024px) {
+    .nav-container {
+        padding: 0 2rem;
+    }
 
     .hero h1 {
         font-size: 3.2rem;
@@ -480,76 +429,90 @@ html, body {
         width: 220px;
         height: 220px;
     }
-
-    .collection-grid {
-        max-width: 90%;
-    }
 }
 
-/* ---------- Mobile ---------- */
 @media (max-width: 768px) {
-
     nav {
-        padding: 1rem 5%;
+        padding: 0.5rem 5%;
+        position: fixed;
     }
 
     .nav-container {
         flex-direction: column;
-        align-items: center;
+        gap: 1rem;
+        padding: 0;
+    }
+
+    .logo-header {
+        justify-content: center !important;
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .logo-header img {
+        height: 55px;
     }
 
     nav ul {
+        gap: 1.5rem;
+        flex-wrap: wrap;
         justify-content: center !important;
         width: 100%;
+        padding-bottom: 0.5rem;
+    }
+
+    nav a {
+        font-size: 0.95rem;
+        padding: 5px;
+        white-space: nowrap;
     }
 
     .hero {
-        min-height: 420px;
         height: auto;
+        min-height: 450px;
+        padding-top: 120px; /* Offset for taller mobile nav if needed */
     }
 
     .hero h1 {
-        font-size: 2.4rem;
+        font-size: 2.5rem;
         letter-spacing: 2px;
     }
 
     .hero p {
-        font-size: 1.1rem;
-    }
-
-    .logo-container {
-        width: 170px;
-        height: 170px;
-    }
-
-    .cta-button {
-        padding: 0.9rem 2.4rem;
-        font-size: 1rem;
-    }
-
-    .about-content {
-        font-size: 1.05rem;
-        line-height: 1.8;
-    }
-
-    .collection {
-        padding: 4rem 5%;
+        font-size: 1.2rem;
+        padding: 0 1rem;
     }
 
     .collection-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
+        max-width: 100%;
     }
 
-    .contact {
-        padding: 4rem 5%;
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .about-content, .contact-content {
+        padding: 0 1rem;
     }
 }
 
-/* ---------- Small Phones ---------- */
 @media (max-width: 480px) {
+    .nav-container {
+        gap: 0.5rem;
+    }
+
+    .logo-header img {
+        height: 45px;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
 
     nav a {
-        font-size: 0.75rem;
+        font-size: 0.85rem;
     }
 
     .hero h1 {
@@ -560,66 +523,20 @@ html, body {
         font-size: 1rem;
     }
 
-    .logo-container {
-        width: 140px;
-        height: 140px;
-    }
-
     .cta-button {
         width: 100%;
-        max-width: 260px;
+        max-width: 280px;
+        padding: 0.8rem 1.5rem;
     }
 
-    .section-title {
-        font-size: 1.8rem;
-    }
-
-    .contact-item p {
-        font-size: 1rem;
+    .logo-container {
+        width: 150px;
+        height: 150px;
     }
 }
-/* ===============================
-   MOBILE HEADER – SINGLE LINE FIX
-   =============================== */
-/* ===============================
-   MOBILE HEADER – OPTIMIZED
-   =============================== */
-@media (max-width: 768px) {
 
-    nav {
-        position: fixed;
-        padding: 0.5rem 5%;
-    }
-
-    .nav-container {
-        flex-direction: row !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        gap: 0.5rem;
-    }
-
-    .logo-header img {
-        height: 45px; /* Slightly smaller to fit */
-    }
-
-    nav ul {
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        gap: 1rem;
-        justify-content: flex-end !important;
-        overflow-x: auto; /* Allow scroll if needed on tiny screens */
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 5px; /* Space for scrollbar if visible */
-        scrollbar-width: none; /* Hide scrollbar for clean look */
-    }
-    
-    nav ul::-webkit-scrollbar {
-        display: none;
-    }
-
-    nav a {
-        font-size: 0.85rem;
-        letter-spacing: 0.5px;
-        white-space: nowrap;
-    }
+/* Fix for horizontal scroll */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
