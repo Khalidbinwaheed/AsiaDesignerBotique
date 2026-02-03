@@ -68,3 +68,24 @@ window.addEventListener('scroll', () => {
         heroBg.style.transform = `translateY(${scrolled * 0.5}px)`;
     }
 });
+
+// Mobile Menu Toggle logic
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('nav ul');
+
+if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        
+        // Optional: Animate hamburger to X
+        menuToggle.classList.toggle('is-active');
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            menuToggle.classList.remove('is-active');
+        });
+    });
+}
